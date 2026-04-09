@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flavour Dash — Fresh Food, Fast Delivery</title>
+  <meta name="description" content="Order delicious food online from Flavour Dash. Explore our curated menu of pizzas, burgers, sushi, desserts &amp; drinks with fast delivery." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+  <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="logo">
+      <span class="logo-icon">🍽️</span>
+      <span>Flavour Dash</span>
+    </a>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#hero" class="active">Home</a>
+      <a href="#menu-section">Menu</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#footer">Contact</a>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:.8rem;">
+      <button class="cart-btn" id="open-cart" aria-label="Open cart">
+        <span class="cart-icon">🛒</span>
+        Cart
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-blob"></div>
+    <div class="hero-blob"></div>
+    <div class="hero-blob"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        Now delivering in 30 min or less
+      </div>
+      <h1>
+        Delicious Food,<br>
+        <span class="highlight">Delivered Fast</span>
+      </h1>
+      <p class="hero-sub">
+        Explore our curated menu crafted by top chefs. From classic pizzas to
+        artisan sushi — order in seconds and taste the difference.
+      </p>
+      <div class="hero-actions">
+        <a href="#menu-section" class="btn btn-primary">
+          Explore Menu 🍕
+        </a>
+        <a href="#how-it-works" class="btn btn-secondary">
+          How It Works →
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">1,200+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Menu Items</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4.9 ⭐</div>
+          <div class="stat-label">Avg Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ MENU ═══════════════════ -->
+  <section class="section" id="menu-section">
+    <div class="section-header">
+      <span class="section-tag">Our Menu</span>
+      <h2 class="section-title">What Are You Craving?</h2>
+      <p class="section-desc">Choose from our handpicked selection of premium dishes, prepared fresh just for you.</p>
+    </div>
+
+    <div class="category-tabs" id="category-tabs">
+      <!-- rendered by JS -->
+    </div>
+
+    <div class="menu-grid" id="menu-grid">
+      <!-- rendered by JS -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════ HOW IT WORKS ═══════════════════ -->
+  <section class="section" id="how-it-works">
+    <div class="section-header">
+      <span class="section-tag">How It Works</span>
+      <h2 class="section-title">Order in 3 Simple Steps</h2>
+      <p class="section-desc">Getting your favourite food delivered has never been easier.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card" id="step-1">
+        <div class="step-icon">📋</div>
+        <div class="step-num">Step 01</div>
+        <h3 class="step-title">Browse Menu</h3>
+        <p class="step-desc">Explore our diverse selection of chef-crafted dishes across multiple categories.</p>
+      </div>
+      <div class="step-card" id="step-2">
+        <div class="step-icon">🛒</div>
+        <div class="step-num">Step 02</div>
+        <h3 class="step-title">Add to Cart</h3>
+        <p class="step-desc">Pick your favourites, customise quantities, and build your perfect order.</p>
+      </div>
+      <div class="step-card" id="step-3">
+        <div class="step-icon">🚀</div>
+        <div class="step-num">Step 03</div>
+        <h3 class="step-title">Fast Delivery</h3>
+        <p class="step-desc">Confirm your order and we'll deliver it fresh to your doorstep in minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CART SIDEBAR ═══════════════════ -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h2 class="cart-title">🛒 Your Cart</h2>
+      <button class="close-cart" id="close-cart" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="cart-items" id="cart-items">
+      <!-- rendered by JS -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span class="cart-total-label">Subtotal</span>
+        <span class="cart-total-value" id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="cart-total-row">
+        <span class="cart-total-label">Tax (8%)</span>
+        <span class="cart-total-value" id="cart-tax">$0.00</span>
+      </div>
+      <div class="cart-total-row cart-grand-total" style="margin-top:.5rem;padding-top:.5rem;border-top:1px solid var(--border-subtle);">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-value" id="cart-total">$0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkout-btn" disabled>
+        Proceed to Checkout →
+      </button>
+    </div>
+  </aside>
+
+  <!-- ═══════════════════ CHECKOUT MODAL ═══════════════════ -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <div style="display:flex;justify-content:space-between;align-items:start;">
+        <div>
+          <h2 class="modal-title">Checkout</h2>
+          <p class="modal-sub">Enter your delivery details to complete the order.</p>
+        </div>
+        <button class="close-cart" id="close-modal" aria-label="Close modal">✕</button>
+      </div>
+
+      <!-- Checkout Form -->
+      <form id="checkout-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="input-name">Full Name</label>
+            <input class="form-input" id="input-name" type="text" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="input-email">Email</label>
+            <input class="form-input" id="input-email" type="email" placeholder="john@example.com" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="input-phone">Phone</label>
+            <input class="form-input" id="input-phone" type="tel" placeholder="+1 234 567 890" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="input-payment">Payment</label>
+            <select class="form-input" id="input-payment">
+              <option value="cod">💵 Cash on Delivery</option>
+              <option value="card">💳 Credit / Debit Card</option>
+              <option value="upi">📱 UPI / Mobile Pay</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="input-address">Delivery Address</label>
+          <textarea class="form-input" id="input-address" placeholder="123 Main Street, Apartment 4B, City" required></textarea>
+        </div>
+        <button class="place-order-btn" type="submit">Place Order 🚀</button>
+      </form>
+
+      <!-- Order Success -->
+      <div id="order-result" class="hidden">
+        <div class="order-success">
+          <div class="success-icon">🎉</div>
+          <h3 class="success-title">Order Confirmed!</h3>
+          <p class="success-msg">
+            Your food is being prepared. You'll receive an email confirmation shortly.
+          </p>
+          <div class="order-id" id="success-order-id">Order #1</div>
+          <p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:1.5rem;">
+            Total: <strong id="success-total">$0.00</strong>
+          </p>
+          <button class="btn btn-primary" onclick="document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow='';">
+            Continue Browsing 🍕
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">🍽️ <span>Flavour Dash</span></div>
+      <div class="footer-links">
+        <a href="#menu-section">Menu</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <p class="footer-text">© 2026 Flavour Dash. All rights reserved. Made with ❤️</p>
+    </div>
+  </footer>
+
+  <!-- Toast container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Hidden utility class -->
+  <style>.hidden{display:none!important;}</style>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
